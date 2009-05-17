@@ -68,7 +68,7 @@ NetHack::Logfile - Parse and create NetHack logfiles
 This module provides an easy way to read NetHack logfiles. You can also create
 logfiles.
 
-This module's interface changed drastically from C<0.01> to C<1.0>.
+This module's interface changed drastically from C<0.01> to C<1.00>.
 
 Currently, NetHack versions 3.2.0 through 3.4.3 are supported. If you desire
 support for an older version, please open up a ticket on rt.cpan.org with some
