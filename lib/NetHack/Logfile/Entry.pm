@@ -17,7 +17,7 @@ sub new_from_line {
 
     my $original_version = $version;
 
-    $version =~ tr/.//;
+    $version =~ tr/.//d;
     while ($version) {
         my $package = "NetHack::Logfile::Entry::$version";
         if (eval { Class::MOP::load_class($package); 1 }) {
