@@ -79,22 +79,22 @@ sub parse {
     return unless my @captures = $input =~ m{
         ^               # start of line
         (3\.2\.\d+) [ ] # version
-        ([\d\-]+)   [ ] # points
-        ([\d\-]+)   [ ] # deathdnum
-        ([\d\-]+)   [ ] # deathlev
-        ([\d\-]+)   [ ] # maxlvl
-        ([\d\-]+)   [ ] # hp
-        ([\d\-]+)   [ ] # maxhp
+        ([\d\-]+)   [ ] # score
+        ([\d\-]+)   [ ] # dungeon
+        ([\d\-]+)   [ ] # current_depth
+        ([\d\-]+)   [ ] # deepest_depth
+        ([\d\-]+)   [ ] # current_hp
+        ([\d\-]+)   [ ] # maximum_hp
         (\d+)       [ ] # deaths
-        (\d+)       [ ] # deathdate
-        (\d+)       [ ] # birthdate
+        (\d+)       [ ] # death_date
+        (\d+)       [ ] # birth_date
         (\d+)       [ ] # uid
         ([A-Z])         # role
         ([MF])      [ ] # gender
-        ([^,]+)     # name
-        ,           # literal comma
-        (.*)        # death
-        $           # end of line
+        ([^,]+)         # name
+        ,               # literal comma
+        (.*)            # death
+        $               # end of line
     }x;
 
     my %parsed;
