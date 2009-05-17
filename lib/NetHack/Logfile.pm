@@ -96,9 +96,5 @@ name: F<logfile>). If any IO error occurs, it will throw an exception.
 
 Returns no useful value.
 
-=head1 AUTHOR
-
-Shawn M Moore, C<sartak@gmail.com>
-
 =cut
 
