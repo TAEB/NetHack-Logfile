@@ -69,6 +69,9 @@ field death => (
     isa => 'Str',
 );
 
+my @fields = qw/version score dungeon current_depth deepest_depth current_hp
+                maximum_hp deaths death_date birth_date uid role gender name
+                death/;
 sub parse {
     my $self  = shift;
     my $input = shift;
@@ -92,12 +95,10 @@ sub parse {
         ,           # literal comma
         (.*)        # death
         $           # end of line
-        }x;
+    }x;
 
-    my %output;
-    @output{qw/version points deathdnum deathlev maxlvl hp maxhp deaths
-               deathdate birthdate uid role gender name death/}
-        = @captures;
+    my %parsed;
+    @parsed{@fields} = @captures;
 
     return \%output;
 }
