@@ -9,7 +9,16 @@ field score => (
 );
 
 field dungeon => (
-    isa => (enum [0..7]),
+    isa => (enum [
+       "The Dungeons of Doom",
+       "Gehennom",
+       "The Gnomish Mines",
+       "The Quest",
+       "Sokoban",
+       "Fort Ludios",
+       "Vlad's Tower",
+       "Endgame",
+    ]),
 );
 
 field current_depth => (
