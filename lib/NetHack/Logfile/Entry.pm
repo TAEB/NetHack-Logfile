@@ -64,3 +64,18 @@ __PACKAGE__->meta->make_immutable;
 
 1;
 
+__END__
+
+=head1 NAME
+
+NetHack::Logfile::Entry - a finished game of NetHack
+
+=head1 DESCRIPTION
+
+Objects of this class represent finished games of NetHack. Each game has a
+B<version>, which is the version of NetHack under which the game was finished.
+
+This class also provides a C<new_from_line> method that parses logline entries.
+
+=cut
+
