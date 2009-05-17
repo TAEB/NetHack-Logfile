@@ -18,7 +18,7 @@ field alignment => (
 
 my @fields = qw/version score dungeon current_depth deepest_depth current_hp
                 maximum_hp deaths death_date birth_date uid role race gender
-                alignment name death/;
+                alignment player death/;
 sub parse {
     my $self  = shift;
     my $input = shift;
@@ -40,7 +40,7 @@ sub parse {
         ([A-Z][a-z][a-z]) [ ] # race
         ([MF][ae][lm])    [ ] # gender
         ([A-Z][a-z][a-z]) [ ] # alignment
-        ([^,]+)               # name
+        ([^,]+)               # player
         ,                     # literal comma
         (.*)                  # death
         $                     # end of line

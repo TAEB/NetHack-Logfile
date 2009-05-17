@@ -57,12 +57,12 @@ field gender => (
     isa => (enum [qw/male female/]),
 );
 
-field 'name';
+field 'player';
 
 field 'death';
 
 my @fields = qw/version score dungeon current_depth deepest_depth current_hp
-                maximum_hp deaths death_date birth_date uid role gender name
+                maximum_hp deaths death_date birth_date uid role gender player
                 death/;
 sub parse {
     my $self  = shift;
@@ -83,7 +83,7 @@ sub parse {
         (\d+)     [ ] # uid
         ([A-Z])       # role
         ([MF])    [ ] # gender
-        ([^,]+)       # name
+        ([^,]+)       # player
         ,             # literal comma
         (.*)          # death
         $             # end of line
