@@ -100,7 +100,7 @@ sub parse {
     my %parsed;
     @parsed{@fields} = @captures;
 
-    return \%output;
+    return \%parsed;
 }
 
 my @dungeons = (
