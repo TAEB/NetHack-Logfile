@@ -82,7 +82,7 @@ sub canonicalize_gender {
     my $self   = shift;
     my $abbrev = shift;
 
-    return $gender{$abbrev};
+    return $genders{$abbrev};
 }
 
 my %races = (
@@ -96,7 +96,7 @@ sub canonicalize_race {
     my $self   = shift;
     my $abbrev = shift;
 
-    return $race{$abbrev};
+    return $races{$abbrev};
 }
 
 my %alignments = (
@@ -108,7 +108,7 @@ sub canonicalize_alignment {
     my $self   = shift;
     my $abbrev = shift;
 
-    return $alignment{$abbrev};
+    return $alignments{$abbrev};
 }
 
 __PACKAGE__->meta->make_immutable;
