@@ -155,6 +155,23 @@ sub canonicalize_gender {
 
 sub ascended { shift->death eq 'ascended' }
 
+my %dungeon_number = (
+    "The Dungeons of Doom" => 0,
+    "Gehennom"             => 1,
+    "The Gnomish Mines"    => 2,
+    "The Quest"            => 3,
+    "Sokoban"              => 4,
+    "Fort Ludios"          => 5,
+    "Vlad's Tower"         => 6,
+    "Endgame"              => 7,
+);
+sub dungeon_number {
+    my $self    = shift;
+    my $dungeon = $self->dungeon || shift;
+
+    return $dungeon_number{$dungeon};
+}
+
 __PACKAGE__->meta->make_immutable;
 no Moose;
 no Moose::Util::TypeConstraints;
