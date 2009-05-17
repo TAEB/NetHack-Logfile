@@ -152,6 +152,9 @@ sub canonicalize_gender {
     return $genders{$letter};
 }
 
+
+sub ascended { shift->death eq 'ascended' }
+
 __PACKAGE__->meta->make_immutable;
 no Moose;
 no Moose::Util::TypeConstraints;

@@ -21,6 +21,7 @@ my %values = (
     alignment     => 'neutral',
     name          => 'Conducty1',
     death         => 'ascended',
+    ascended      => 1,
 );
 
 plan tests => scalar keys %values;
