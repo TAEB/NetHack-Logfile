@@ -164,6 +164,13 @@ sub dungeon_number {
     return $dungeon_number{$dungeon};
 }
 
+sub abbreviate_cg {
+    my $self   = shift;
+    my $method = shift;
+
+    return ucfirst substr($self->$method, 0, 1);
+}
+
 __PACKAGE__->meta->make_immutable;
 no Moose;
 no Moose::Util::TypeConstraints;

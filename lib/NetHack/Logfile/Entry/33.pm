@@ -111,6 +111,13 @@ sub canonicalize_alignment {
     return $alignments{$abbrev};
 }
 
+sub abbreviate_crga {
+    my $self   = shift;
+    my $method = shift;
+
+    return ucfirst lc substr($self->$method, 0, 3);
+}
+
 __PACKAGE__->meta->make_immutable;
 no Moose;
 no Moose::Util::TypeConstraints;
