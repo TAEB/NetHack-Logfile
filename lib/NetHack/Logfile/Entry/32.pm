@@ -41,13 +41,9 @@ field deaths => (
     isa => 'Int',
 );
 
-field birth_date => (
-    isa => 'Str',
-);
+field 'birth_date';
 
-field death_date => (
-    isa => 'Str',
-);
+field 'death_date';
 
 field uid => (
     isa => 'Int',
@@ -61,13 +57,9 @@ field gender => (
     isa => (enum [qw/male female/]),
 );
 
-field name => (
-    isa => 'Str',
-);
+field 'name';
 
-field death => (
-    isa => 'Str',
-);
+field 'death';
 
 my @fields = qw/version score dungeon current_depth deepest_depth current_hp
                 maximum_hp deaths death_date birth_date uid role gender name

@@ -3,9 +3,7 @@ use Moose;
 use Moose::Util::TypeConstraints 'enum';
 use NetHack::Logfile::Util;
 
-field version => (
-    isa => 'Str',
-);
+field 'version';
 
 sub new_from_line {
     my $self = shift;
