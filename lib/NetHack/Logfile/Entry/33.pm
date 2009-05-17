@@ -139,3 +139,57 @@ no Moose;
 no Moose::Util::TypeConstraints;
 
 1;
+
+__END__
+
+=head1 NAME
+
+NetHack::Logfile::Entry::33 - a finished game of NetHack 3.3.0 or later
+
+=head1 DESCRIPTION
+
+Please see the superclass L<NetHack::Logfile::Entry::32> for additional fields
+and methods.
+
+=head1 NEW FIELDS
+
+=head2 race
+
+The name of the race (e.g. C<dwarf>)
+
+See L<race_three> for the usual rendering (e.g. C<Dwa>).
+
+=head2 alignment
+
+The name of the alignment (e.g. C<neutral>)
+
+See L<alignment_three> for the usual rendering (e.g. C<Neu>).
+
+=head1 CHANGED FIELDS
+
+=head2 role
+
+The Ranger and Monk roles were added, and the Elf role became the Elf race.
+
+See L<role_three> for the usual rendering (e.g. C<Mon>).
+
+=head1 METHODS
+
+=head2 role_three
+
+The three-letter abbreviation of the character's role. (e.g. C<Wiz>)
+
+=head2 race_three
+
+The three-letter abbreviation of the character's race. (e.g. C<Hum>)
+
+=head2 gender_three
+
+The three-letter abbreviation of the character's gender. (e.g. C<Fem>)
+
+=head2 alignment_three
+
+The three-letter abbreviation of the character's alignment. (e.g. C<Neu>)
+
+=cut
+

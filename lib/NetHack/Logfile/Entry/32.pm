@@ -198,6 +198,11 @@ NetHack::Logfile::Entry::32 - a finished game of NetHack 3.2.0 or later
 
 =head1 DESCRIPTION
 
+See the superclass L<NetHack::Logfile::Entry> for some more information.
+
+As this is the oldest version of NetHack supported by this module, all of the
+fields are in this module.
+
 =head1 FIELDS
 
 =head2 score
