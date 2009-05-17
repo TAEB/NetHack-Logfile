@@ -31,6 +31,37 @@ sub new_from_line {
     confess "This version of NetHack::Logfile cannot handle NetHack version $original_version log entries.";
 }
 
+sub _parse_and_construct {
+    my $self = shift;
+    my $line = shift;
+
+    my $fields = $self->parse($line);
+    confess "Unable to parse NetHack log entry $line" if !$fields;
+
+    my $parameters = $self->_canonicalize($fields);
+
+    return $self->new($parameters);
+}
+
+sub _canonicalize {
+    my $self   = shift;
+    my $fields = shift;
+
+    for my $key (keys %$fields) {
+        my $method = "canonicalize_$key";
+        next unless $self->can($method);
+        my $value = $fields->{$key};
+
+        my $canonicalized = $self->$method($value, $fields);
+        confess "Unable to canonicalize NetHack log field '$key' value '$value"
+            unless defined $canonicalized;
+
+        $fields->{$key} = $canonicalized;
+    }
+
+    return $fields;
+}
+
 __PACKAGE__->meta->make_immutable;
 
 1;
