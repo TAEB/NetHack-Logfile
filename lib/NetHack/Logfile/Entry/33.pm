@@ -25,7 +25,7 @@ sub parse {
 
     return unless my @captures = $input =~ m{
         ^                     # start of line
-        (3\.4\.\d+)       [ ] # version
+        ([\d\.]+)         [ ] # version
         ([\d\-]+)         [ ] # score
         ([\d\-]+)         [ ] # dungeon
         ([\d\-]+)         [ ] # current_depth
