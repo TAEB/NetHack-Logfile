@@ -149,7 +149,7 @@ sub canonicalize_gender {
     my $self   = shift;
     my $letter = shift;
 
-    return $gender{$letter};
+    return $genders{$letter};
 }
 
 __PACKAGE__->meta->make_immutable;
