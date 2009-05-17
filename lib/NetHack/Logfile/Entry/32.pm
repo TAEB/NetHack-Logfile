@@ -144,6 +144,17 @@ sub canonicalize_gender {
     return $genders{$letter};
 }
 
+my @output_methods = qw/version score dungeon_number current_depth deepest_depth
+                        current_hp maximum_hp deaths death_date birth_date uid
+                        role_one gender_one player death/;
+
+sub as_line {
+    my $self = shift;
+
+    sprintf '%s %d %d %d %d %d %d %d %d %d %d %1.1s%1.1s %s,%s',
+        map { $self->$_ } @output_methods;
+}
+
 
 sub ascended { shift->death eq 'ascended' }
 

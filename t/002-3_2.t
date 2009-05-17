@@ -23,11 +23,13 @@ my %values = (
     version        => '3.2.2',
 );
 
-plan tests => scalar keys %values;
+plan tests => 1 + scalar keys %values;
 
-my $entry = NetHack::Logfile::Entry->new_from_line("3.2.2 31744 2 11 11 0 101 1 19991126 19991125 1 VF Shana,killed by a leocrotta");
+my $line = "3.2.2 31744 2 11 11 0 101 1 19991126 19991125 1 VF Shana,killed by a leocrotta";
+my $entry = NetHack::Logfile::Entry->new_from_line($line);
 
 for my $method (sort keys %values) {
     is_deeply($entry->$method, $values{$method}, $method);
 }
 
+is($line, $entry->as_line, 'parse <-> as_line are reversible');
