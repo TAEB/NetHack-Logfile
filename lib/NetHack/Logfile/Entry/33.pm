@@ -1,4 +1,4 @@
-package NetHack::Logfile::Entry::34;
+package NetHack::Logfile::Entry::33;
 use Moose;
 use Moose::Util::TypeConstraints 'enum';
 use NetHack::Logfile::Util;
