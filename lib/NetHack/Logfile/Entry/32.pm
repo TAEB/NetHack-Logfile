@@ -170,6 +170,8 @@ sub abbreviate_cg {
 
     return ucfirst substr($self->$method, 0, 1);
 }
+sub role_one   { shift->abbreviate_cg('role')   }
+sub gender_one { shift->abbreviate_cg('gender') }
 
 __PACKAGE__->meta->make_immutable;
 no Moose;
