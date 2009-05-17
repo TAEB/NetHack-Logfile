@@ -23,7 +23,7 @@ sub new_from_line {
         if (eval { Class::MOP::load_class($package); 1 }) {
             return $package->_parse_and_construct($line);
         }
-        warn $@ if $@ !~ /^Can't locate NetHack/;
+        warn $@ if $@ !~ /Can't locate NetHack/;
 
         chop $version;
     }
