@@ -189,3 +189,90 @@ no Moose;
 no Moose::Util::TypeConstraints;
 
 1;
+
+__END__
+
+=head1 NAME
+
+NetHack::Logfile::Entry::32 - a finished game of NetHack 3.2.0 or later
+
+=head1 DESCRIPTION
+
+=head1 FIELDS
+
+=head2 score
+
+=head2 dungeon
+
+This is a string representing the dungeon, such as "The Gnomish MineS".
+You may want L</dungeon_number>.
+
+=head2 current_depth
+
+=head2 deepest_depth
+
+=head2 current_hp
+
+=head2 maximum_hp
+
+=head2 deaths
+
+The number of times the character has died on the adventure. Usually this will
+be 1, but could be fewer if the game did not end in death. It could be more if
+the character was revived during the course of the adventure.
+
+=head2 birth_date
+
+A string (e.g. C<20090517>) representing the date that the game began.
+
+=head2 end_date
+
+A string (e.g. C<20090517>) representing the date that the game ended.
+
+=head2 uid
+
+The UNIX user ID of the game's human player.
+
+=head2 role
+
+The role of the character, e.g. C<archeologist>.
+
+You may want the L<role_one> method which gives you the role's capital initial (e.g. C<A> for archeologist).
+
+=head2 gender
+
+The gender of the character, C<male> or C<female>.
+
+You may want the L<gender_one> method which gives you the gender's capital
+initial (e.g. C<F> for female).
+
+=head2 player
+
+The name of the player or character.
+
+=head2 death
+
+NetHack's description of how the game ended. Ideally it would be C<ascended>.
+
+=head1 METHODS
+
+=head2 as_line
+
+Renders this entry as a line in the logfile. This is constructed dynamically
+(instead of being cached from parse time).
+
+=head2 dungeon_number
+
+Provides the dungeon I<number> instead of I<name>. Useful for doing your own
+naming or other kind of indexing, I suppose.
+
+=head2 role_one
+
+The capital one-letter abbreviation of the character's role.
+
+=head2 gender_one
+
+The capital one-letter abbreviation of the character's role.
+
+=cut
+
