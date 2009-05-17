@@ -111,12 +111,28 @@ sub canonicalize_alignment {
     return $alignments{$abbrev};
 }
 
+my @output_methods = qw/version score dungeon_number current_depth
+                        deepest_depth current_hp maximum_hp deaths death_date
+                        birth_date uid role_three race_three gender_three
+                        alignment_three player death/;
+
+sub as_line {
+    my $self = shift;
+
+    sprintf '%s %d %d %d %d %d %d %d %d %d %d %s %s %s %s %s,%s',
+        map { $self->$_ } @output_methods;
+}
+
 sub abbreviate_crga {
     my $self   = shift;
     my $method = shift;
 
     return ucfirst lc substr($self->$method, 0, 3);
 }
+sub role_three      { shift->abbreviate_crga('role') }
+sub race_three      { shift->abbreviate_crga('race') }
+sub gender_three    { shift->abbreviate_crga('gender') }
+sub alignment_three { shift->abbreviate_crga('alignment') }
 
 __PACKAGE__->meta->make_immutable;
 no Moose;
