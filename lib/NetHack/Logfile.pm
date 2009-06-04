@@ -8,6 +8,8 @@ use Sub::Exporter -setup => {
     exports => [qw(read_logfile parse_logline write_logfile)],
 };
 
+our $VERSION = 1.01;
+
 sub read_logfile {
     my $filename = @_ ? shift : "logfile";
     my @entries;
